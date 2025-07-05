@@ -1,0 +1,289 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: #fff8f4;
+    color: #333;
+}
+
+/* Navbar */
+nav {
+    background-color: #ffe3ea;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #f5cdd8;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: #c94b6a;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #d14b7d;
+}
+
+/* Menu Links */
+#nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffe3ea;
+    padding: 1rem 0;
+    gap: 1rem;
+    font-weight: bold;
+}
+
+#nav-links.hidden {
+    display: none;
+}
+
+#nav-links a {
+    text-decoration: none;
+    color: #d14b7d;
+    font-size: 1.1rem;
+}
+
+#nav-links a:hover {
+    color: #9e2d58;
+}
+
+/* Header */
+header h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    color: #c94b6a;
+}
+
+header p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.hero img {
+    width: 90%;
+    max-width: 800px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero h2 {
+    margin-top: 1.5rem;
+    color: #b23a48;
+}
+
+.hero p {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1rem;
+    background-color: #ffe3ea;
+    color: #9e2d58;
+    font-weight: bold;
+}
+
+/* Historia */
+.historia {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.historia h2 {
+    color: #c94b6a;
+    margin-top: 2rem;
+}
+
+.historia p,
+.historia li {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+/* Galería */
+.galeria {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.2rem;
+}
+
+.grid img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Timeline */
+.timeline-container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.event {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+.event img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.event-content h3 {
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+    color: #e94e77;
+}
+
+.event-content p {
+    margin: 0;
+    color: #444;
+}
+
+/* Carta */
+.carta-amor {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    background-color: #fff0f5;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    font-family: 'Georgia', serif;
+    line-height: 1.7;
+    color: #333;
+    text-align: justify;
+}
+
+.carta-amor h2 {
+    text-align: center;
+    color: #e94e77;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+}
+
+/* Reveal Animation */
+.invisible {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        padding: 0 1rem;
+    }
+
+    header p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .hero h2 {
+        font-size: 1.4rem;
+    }
+
+    .hero p,
+    .historia p,
+    .event-content p,
+    .carta-amor p {
+        font-size: 1rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .carta-amor {
+        padding: 20px 16px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+
+    .event {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .event img {
+        margin: 0 0 12px 0;
+        width: 100%;
+        height: auto;
+    }
+}
