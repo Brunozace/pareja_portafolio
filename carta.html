@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Carta para Maka 💌</title>
+    <link rel="icon" type="image/x-icon" href="heart-icon.png">
     <link rel="stylesheet" href="style/estilos.css" />
 </head>
 <body>
@@ -11,7 +12,9 @@
 <header>
     <nav>
         <div class="nav-container">
-            <div class="logo">❤️</div>
+            <div class="logo">
+                <img src="assets/images/heart-logo.png" alt="Logo" class="logo-img">
+            </div>
             <div class="hamburger" onclick="toggleMenu()">☰</div>
         </div>
         <ul id="nav-links" class="hidden">
@@ -30,15 +33,32 @@
 
 <main class="carta-amor">
     <h2>Mi gorda 💌</h2>
-    <p>
-        Mi querida Gorda,<br><br>
-        Desde el primer momento en que nuestras miradas se cruzaron, supe que mi vida estaba a punto de cambiar. Cada momento contigo ha sido una bendición: desde nuestras paseos, películas, risas, silencios, hasta nuestros abrazos que hablan más que las palabras.<br><br>
-        Eres mi vida, mi emoción, mi lugar favorito del mundo. Me has enseñado a amar de una forma nueva, más pura y real. Gracias por ser tú, por estar a mi lado, por entregarme tu cariño, tu confianza y tu tiempo.<br><br>
-        Este proyecto es un regalo para nosotros, para inmortalizar lo que sentimos y todo lo que hemos vivido. Ojalá el tiempo siempre nos alcance para amarnos como hasta ahora… o incluso más.<br><br>
-        Con todo mi corazón,<br>
-        Bruno 💖
-    </p>
+
+    <div class="envelope-container">
+        <img
+                src="assets/images/envelope-closed.png"
+                alt="Sobre cerrado"
+                class="envelope"
+                id="envelopeImage"
+        />
+
+        <div class="carta-contenido hidden" id="cartaTexto">
+            <p>
+                Mi querida Gorda,<br><br>
+                Desde el primer momento en que nuestras miradas se cruzaron, supe que mi vida estaba a punto de cambiar.
+                Cada momento contigo ha sido una bendición: desde nuestras paseos, películas, risas, silencios, hasta nuestros abrazos que hablan más que las palabras.<br><br>
+                Eres mi vida, mi emoción, mi lugar favorito del mundo. Me has enseñado a amar de una forma nueva, más pura y real.
+                Gracias por ser tú, por estar a mi lado, por entregarme tu cariño, tu confianza y tu tiempo.<br><br>
+                Este proyecto es un regalo para nosotros, para inmortalizar lo que sentimos y todo lo que hemos vivido.
+                Ojalá el tiempo siempre nos alcance para amarnos como hasta ahora… o incluso más.<br><br>
+                Con todo mi corazón,<br>
+                Bruno 💖
+            </p>
+        </div>
+    </div>
 </main>
+
+
 
 <footer>
     <p>Hecho con mucho amor 💝 — Bruno</p>

@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería de Fotos - Maka y Bruno</title>
+    <link rel="icon" type="image/x-icon" href="heart-icon.png">
     <link rel="stylesheet" href="style/estilos.css">
 </head>
 <body>
 <header>
     <nav>
         <div class="nav-container">
-            <div class="logo">❤️</div>
+            <div class="logo">
+                <img src="assets/images/heart-logo.png" alt="Logo" class="logo-img">
+            </div>
             <div class="hamburger" onclick="toggleMenu()">☰</div>
         </div>
         <ul id="nav-links" class="hidden">
@@ -29,17 +32,43 @@
 
 <main class="galeria">
     <div class="grid">
+        <div class="grid-item">
         <img src="assets/images/volcano-kiss.jpg" alt="Beso frente al volcán">
-        <img src="assets/images/formal-date.jpg" alt="Cena elegante">
-        <img src="assets/images/thermal-pool.jpg" alt="Termas selfie">
-        <img src="assets/images/rafting.jpg" alt="Rafting en Pucón">
-        <img src="assets/images/drive-lesson.jpg" alt="Conduciendo juntos">
-        <img src="assets/images/fair.jpg" alt="Feria con peluches">
-        <img src="assets/images/stitch.jpg" alt="Stitch con corazón">
-        <img src="assets/images/giraffe.jpg" alt="En el zoológico">
-        <img src="assets/images/wink.jpg" alt="Selfie divertida">
-        <img src="assets/images/heart-eye.jpg" alt="Corazón en el ojo">
+            </div>
+            <div class="grid-item">
+                <img src="assets/images/formal-date.jpg" alt="Cena elegante">
+                </div>
+                <div class="grid-item">
+                <img src="assets/images/thermal-pool.jpg" alt="Termas selfie">
+                    </div>
+                    <div class="grid-item">
+                    <img src="assets/images/rafting.jpg" alt="Rafting en Pucón">
+                        </div>
+                        <div class="grid-item">
+                        <img src="assets/images/drive-lesson.jpg" alt="Conduciendo juntos">
+                            </div>
+                            <div class="grid-item">
+                            <img src="assets/images/fair.jpg" alt="Feria con peluches">
+                                </div>
+                                <div class="grid-item">
+                                <img src="assets/images/stitch.jpg" alt="Stitch con corazón">
+                                    </div>
+                                    <div class="grid-item">
+                                    <img src="assets/images/giraffe.jpg" alt="En el zoológico">
+                                        </div>
+                                        <div class="grid-item">
+                                        <img src="assets/images/wink.jpg" alt="Selfie divertida">
+                                            </div>
+                                            <div class="grid-item">
+                                            <img src="assets/images/heart-eye.jpg" alt="Corazón en el ojo">
+                                                </div>
     </div>
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox hidden">
+        <span class="close-btn" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" class="lightbox-img" src="" alt="Imagen ampliada">
+    </div>
+
 </main>
 
 <footer>
