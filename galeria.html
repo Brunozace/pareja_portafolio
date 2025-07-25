@@ -14,8 +14,11 @@
             <div class="logo">
                 <img src="assets/images/heart-logo.png" alt="Logo" class="logo-img">
             </div>
-            <div class="hamburger" onclick="toggleMenu()">☰</div>
-        </div>
+            <div class="hamburger" onclick="toggleMenu(this)">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>        </div>
         <ul id="nav-links" class="hidden">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="historia.html">Nuestra Historia</a></li>
@@ -66,7 +69,9 @@
     <!-- Lightbox -->
     <div id="lightbox" class="lightbox hidden">
         <span class="close-btn" onclick="closeLightbox()">×</span>
+        <span class="arrow left" onclick="navigateLightbox(-1)">&#10094;</span>
         <img id="lightbox-img" class="lightbox-img" src="" alt="Imagen ampliada">
+        <span class="arrow right" onclick="navigateLightbox(1)">&#10095;</span>
     </div>
 
 </main>

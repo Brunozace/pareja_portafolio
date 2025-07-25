@@ -35,10 +35,15 @@ if (hamburger && navLinks) {
     });
 }
 
-function toggleMenu() {
+function toggleMenu(el) {
     const navLinks = document.getElementById("nav-links");
     navLinks.classList.toggle("hidden");
+
+    if (el) {
+        el.classList.toggle("active");
+    }
 }
+
 
 // Fireworks animation when entering website
 document.addEventListener("DOMContentLoaded", () => {
@@ -144,14 +149,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
+const galleryImages = Array.from(document.querySelectorAll(".grid-item img"));
+let currentIndex = 0;
 
-document.querySelectorAll(".grid-item img").forEach(img => {
+// Show image in lightbox
+galleryImages.forEach((img, index) => {
     img.addEventListener("click", () => {
-        lightboxImg.src = img.src;
-        lightbox.classList.remove("hidden");
+        currentIndex = index;
+        openLightbox();
     });
 });
 
+function openLightbox() {
+    lightboxImg.src = galleryImages[currentIndex].src;
+    lightbox.classList.remove("hidden");
+}
+
 function closeLightbox() {
     lightbox.classList.add("hidden");
+}
+
+// Navigate left or right
+function navigateLightbox(direction) {
+    currentIndex += direction;
+    if (currentIndex < 0) currentIndex = galleryImages.length - 1;
+    if (currentIndex >= galleryImages.length) currentIndex = 0;
+    lightboxImg.src = galleryImages[currentIndex].src;
 }
