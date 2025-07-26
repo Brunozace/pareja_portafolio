@@ -18,6 +18,7 @@ nav {
     padding: 1rem 2rem;
     border-bottom: 1px solid #f5cdd8;
     overflow: visible; /* allows rotated lines to stay visible */
+    z-index: 1;
 }
 
 .nav-container {
@@ -27,6 +28,7 @@ nav {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
     overflow: visible;
 }
 
@@ -47,17 +49,14 @@ nav {
     justify-content: space-between;
     z-index: 10001;      /* Higher z-index than nav items */
     padding: 2px; /* Add this to allow for rotated lines */
+    overflow: visible;
 }
-@media (max-width: 768px) {
-    .hamburger {
-        margin-right: 1.5rem;
-    }
-}
+
 
 .hamburger span {
     display: block;
     height: 4px;
-    width: 100%;
+    width: 32px;
     background-color: #d14b7d;
     border-radius: 3px;
     transition: all 0.3s ease;
@@ -66,7 +65,7 @@ nav {
 
 /* Animation when active */
 .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(4px, 4px);
+    transform: rotate(45deg) translate(6px, 6px);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -74,7 +73,7 @@ nav {
 }
 
 .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(4px,-4px);
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 
@@ -113,12 +112,14 @@ header h1 {
     font-size: 2.5rem;
     margin-top: 1rem;
     color: #c94b6a;
+    overflow: visible;
 }
 
 header p {
     text-align: center;
     font-size: 1.1rem;
     color: #666;
+    overflow: visible;
 }
 
 /* Hero Section */
@@ -297,6 +298,7 @@ footer {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 1rem; /* ✅ add horizontal padding */
+        overflow: visible;
     }
 
     .logo {
@@ -502,6 +504,5 @@ footer {
     transform: scale(1.1);
     color: #ff5f88;
 }
-
 
 
