@@ -3,62 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestra Historia - Maka y Bruno</title>
+    <title>Maka y Bruno | Nuestra historia</title>
+    <meta name="description" content="Línea narrativa de nuestra historia: citas, viajes y pequeñas victorias.">
     <link rel="icon" type="image/x-icon" href="heart-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style/estilos.css">
 </head>
 <body>
-<header>
-    <nav>
-        <div class="nav-container">
-            <div class="logo">
-                <img src="assets/images/heart-logo.png" alt="Logo" class="logo-img">
+<header class="site-header">
+    <nav class="site-nav container">
+        <a class="brand" href="index.html">
+            <img src="assets/images/heart-logo.png" alt="Logo Maka y Bruno" class="logo-img">
+            <div class="brand-copy">
+                <span class="brand-label">Maka & Bruno</span>
+                <span class="brand-caption">Desde 26&middot;07&middot;2024</span>
             </div>
-            <div class="hamburger" onclick="toggleMenu(this)">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>        </div>
-        <ul id="nav-links" class="hidden">
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="primaryNav">
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="historia.html">Nuestra Historia</a></li>
+            <li><a class="active" aria-current="page" href="historia.html">Nuestra historia</a></li>
             <li><a href="galeria.html">Galería</a></li>
-            <li><a href="timeline.html">Línea de Tiempo</a></li>
+            <li><a href="timeline.html">Línea de tiempo</a></li>
             <li><a href="carta.html">Carta</a></li>
         </ul>
     </nav>
-
-    <h1>Nuestra Historia</h1>
-    <p>Así comenzó todo…</p>
 </header>
 
-<main class="historia">
-    <section>
-        <h2>Concepción, 26 de julio de 2024</h2>
-        <p>Ese día mágico en el mall fue nuestra primera cita. Desde ese momento, todo cambió. Recuerdo perfectamente lo nervioso que estaba, pero bastó una sonrisa tuya para sentir que todo estaba bien.</p>
+<main>
+    <section class="page-hero container" data-animate>
+        <p class="eyebrow">Crónica</p>
+        <h1>Así empezó todo</h1>
+        <p>
+            Este es el guion detrás de nuestras fotos: coincidencias, mensajes eternos, viajes y la certeza de que
+            encontramos hogar en el otro. Cada capítulo tiene una música distinta, pero siempre la misma protagonista.
+        </p>
     </section>
 
-    <section>
-        <h2>26 de octubre de 2024</h2>
-        <p>Hicimos oficial nuestra relación y te entregué un anillo de compromiso simbólico. Fue un momento lleno de emoción, y desde ahí comenzó el mejor viaje de mi vida.</p>
+    <section class="story-grid container">
+        <article class="story-card" data-animate>
+            <p class="story-date">26 julio 2024 &middot; Concepción</p>
+            <h3>La primera cita</h3>
+            <p>
+                Shopping, nervios y la sonrisa que hizo que todo fuera simple. Ese día volví a casa con la sensación
+                de haber encontrado a mi persona favorita.
+            </p>
+        </article>
+        <article class="story-card" data-animate>
+            <p class="story-date">26 octubre 2024 &middot; Un anillo simbólico</p>
+            <h3>Oficialmente nosotros</h3>
+            <p>
+                Entre promesas sinceras y un anillo que guarda planes grandes, declaramos lo que ya era evidente:
+                queríamos caminar juntos, sin pausa.
+            </p>
+        </article>
+        <article class="story-card" data-animate>
+            <p class="story-date">5 septiembre 2024 &middot; Clases improvisadas</p>
+            <h3>Ensayo de manejo</h3>
+            <p>
+                Convertimos el auto en sala de clases, con paciencia, risas y múltiples intentos para estacionar.
+                Cada progreso fue celebrado con abrazos.
+            </p>
+        </article>
+        <article class="story-card" data-animate>
+            <p class="story-date">Vacaciones en Pucón</p>
+            <h3>Aventura y termas</h3>
+            <p>
+                Rafting, kayak, piscinas termales, fotografías en el volcán y la sensación de que los paisajes se
+                ven mejores cuando estás al lado.
+            </p>
+        </article>
+        <article class="story-card story-card--list" data-animate>
+            <p class="story-date">Momentos inolvidables</p>
+            <ul>
+                <li>Paseo a Aguas del Monte con sol eterno.</li>
+                <li>La feria con peluches gigantes.</li>
+                <li>Los desayunos después de quedarnos dormidos en el sofá.</li>
+                <li>Cada vez que repetimos nuestra playlist de viaje.</li>
+            </ul>
+        </article>
+        <article class="story-card" data-animate>
+            <p class="story-date">Hoy</p>
+            <h3>El viaje continúa</h3>
+            <p>
+                Seguimos escribiendo esta historia con nuevos proyectos, metas compartidas y una certeza: aquí,
+                juntos, es donde siempre queremos volver.
+            </p>
+        </article>
     </section>
 
-    <section>
-        <h2>Momentos Inolvidables</h2>
-        <ul>
-            <li>Vacaciones en Pucón – Rafting, kayak, termas</li>
-            <li>Te enseñé a manejar 🚗</li>
-            <li>Dormimos en mi casa a escondidas</li>
-            <li>Paseo a Aguas del Monte</li>
-        </ul>
-        <p>Todo esto lo recuerdo con una sonrisa... y con ganas de seguir sumando momentos contigo 💖</p>
+    <section class="cta-panel container" data-animate>
+        <div class="cta-copy">
+            <p class="eyebrow">Continuar</p>
+            <h2>Explora los detalles en la línea de tiempo.</h2>
+            <p>Desliza fecha a fecha para revivir los hitos y anotar los que vienen.</p>
+        </div>
+        <div class="cta-actions">
+            <a class="btn btn-outline" href="galeria.html">Ver la galería</a>
+            <a class="btn btn-primary" href="timeline.html">Ir a la línea</a>
+        </div>
     </section>
 </main>
 
-<footer>
-    <p>Hecho con mucho amor 💝 — Bruno</p>
+<footer class="site-footer">
+    <p>Hecho con amor y código por Bruno.</p>
 </footer>
-<script src="js/main.js"></script>
 
+<script src="js/main.js"></script>
 </body>
 </html>

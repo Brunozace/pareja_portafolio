@@ -1,61 +1,62 @@
-// Smooth scrolling
+// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
+        const targetId = this.getAttribute("href");
+        if (!targetId || targetId === "#") return;
+        const target = document.querySelector(targetId);
         if (target) {
+            e.preventDefault();
             target.scrollIntoView({ behavior: "smooth" });
         }
     });
 });
 
 // Scroll reveal effect
-const observer = new IntersectionObserver(entries => {
+const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+            entry.target.classList.add("is-visible");
         }
     });
-}, {
-    threshold: 0.1
+}, { threshold: 0.15 });
+
+document.querySelectorAll('[data-animate]').forEach(el => {
+    revealObserver.observe(el);
 });
 
-document.querySelectorAll('.event, .carta-amor, .hero').forEach(el => {
-    el.classList.add("invisible");
-    observer.observe(el);
-});
+// Navigation toggle
+const navToggle = document.getElementById('navToggle');
+const primaryNav = document.getElementById('primaryNav');
 
-// Hamburger menu toggle
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
-
-if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('show');
+if (navToggle && primaryNav) {
+    navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!isOpen));
+        navToggle.classList.toggle('is-open');
+        primaryNav.classList.toggle('is-open');
     });
 }
 
-function toggleMenu(el) {
-    const navLinks = document.getElementById("nav-links");
-    navLinks.classList.toggle("hidden");
-
-    if (el) {
-        el.classList.toggle("active");
+// Highlight current nav link
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav-links a').forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
     }
-}
+});
 
-
-// Fireworks animation when entering website
+// Fireworks animation when entering website (only on index)
 document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("fireworksCanvas");
-    const ctx = canvas.getContext("2d");
+    if (!canvas) return;
 
+    const ctx = canvas.getContext("2d");
     canvas.style.position = "fixed";
     canvas.style.top = 0;
     canvas.style.left = 0;
     canvas.style.width = "100vw";
     canvas.style.height = "100vh";
-    canvas.style.zIndex = 9999;
+    canvas.style.zIndex = 999;
     canvas.style.pointerEvents = "none";
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -65,16 +66,16 @@ document.addEventListener("DOMContentLoaded", () => {
     function createFirework() {
         const x = Math.random() * canvas.width;
         const y = Math.random() * canvas.height * 0.5;
-        const colors = ["#ff4d4d", "#ff66cc", "#ffcc00", "#66ff66", "#66ccff"];
+        const colors = ["#ff6685", "#ff9eb5", "#ffd678", "#8fe1d9"];
         const color = colors[Math.floor(Math.random() * colors.length)];
 
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 40; i++) {
             particles.push({
                 x,
                 y,
                 angle: Math.random() * 2 * Math.PI,
-                speed: Math.random() * 5 + 2,
-                radius: Math.random() * 3 + 1,
+                speed: Math.random() * 4 + 1.5,
+                radius: Math.random() * 2 + 1,
                 alpha: 1,
                 color
             });
@@ -85,10 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         particles.forEach((p, i) => {
-            const dx = Math.cos(p.angle) * p.speed;
-            const dy = Math.sin(p.angle) * p.speed;
-            p.x += dx;
-            p.y += dy;
+            p.x += Math.cos(p.angle) * p.speed;
+            p.y += Math.sin(p.angle) * p.speed;
             p.alpha -= 0.01;
 
             ctx.beginPath();
@@ -103,37 +102,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function hexToRgb(hex) {
-        hex = hex.replace("#", "");
-        const bigint = parseInt(hex, 16);
+        const value = hex.replace("#", "");
+        const bigint = parseInt(value, 16);
         const r = (bigint >> 16) & 255;
         const g = (bigint >> 8) & 255;
         const b = bigint & 255;
         return `${r}, ${g}, ${b}`;
     }
 
-    // Launch fireworks every 500ms for 3 seconds
-    let fireworkInterval = setInterval(createFirework, 500);
+    let fireworkInterval = setInterval(createFirework, 600);
     setTimeout(() => {
         clearInterval(fireworkInterval);
-        // Remove canvas after animation
-        setTimeout(() => canvas.remove(), 2000);
-    }, 3000);
+        setTimeout(() => canvas.remove(), 1500);
+    }, 2600);
 
     animate();
+
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
 });
 
-
-
-
-
+// Carta interactiva
 document.addEventListener('DOMContentLoaded', () => {
     const envelope = document.getElementById('envelopeImage');
     const cartaTexto = document.getElementById('cartaTexto');
+    if (!envelope || !cartaTexto) return;
 
     envelope.addEventListener('mouseenter', () => {
         envelope.src = 'assets/images/envelope-open.png';
         cartaTexto.classList.remove('hidden');
-        setTimeout(() => cartaTexto.classList.add('show'), 50);
+        requestAnimationFrame(() => cartaTexto.classList.add('show'));
     });
 
     envelope.addEventListener('mouseleave', () => {
@@ -143,34 +143,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
-
-
-
+// Galeria con lightbox
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const galleryImages = Array.from(document.querySelectorAll(".grid-item img"));
 let currentIndex = 0;
 
-// Show image in lightbox
-galleryImages.forEach((img, index) => {
-    img.addEventListener("click", () => {
-        currentIndex = index;
-        openLightbox();
+if (galleryImages.length && lightbox && lightboxImg) {
+    galleryImages.forEach((img, index) => {
+        img.addEventListener("click", () => {
+            currentIndex = index;
+            openLightbox();
+        });
     });
-});
+}
 
 function openLightbox() {
+    if (!lightbox || !lightboxImg) return;
     lightboxImg.src = galleryImages[currentIndex].src;
     lightbox.classList.remove("hidden");
 }
 
 function closeLightbox() {
+    if (!lightbox) return;
     lightbox.classList.add("hidden");
 }
 
-// Navigate left or right
 function navigateLightbox(direction) {
+    if (!galleryImages.length || !lightboxImg) return;
     currentIndex += direction;
     if (currentIndex < 0) currentIndex = galleryImages.length - 1;
     if (currentIndex >= galleryImages.length) currentIndex = 0;

@@ -3,107 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería de Fotos - Maka y Bruno</title>
+    <title>Maka y Bruno | Galería</title>
+    <meta name="description" content="Colección curada de recuerdos fotográficos de Maka y Bruno.">
     <link rel="icon" type="image/x-icon" href="heart-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style/estilos.css">
 </head>
 <body>
-<header>
-    <nav>
-        <div class="nav-container">
-            <div class="logo">
-                <img src="assets/images/heart-logo.png" alt="Logo" class="logo-img">
+<header class="site-header">
+    <nav class="site-nav container">
+        <a class="brand" href="index.html">
+            <img src="assets/images/heart-logo.png" alt="Logo Maka y Bruno" class="logo-img">
+            <div class="brand-copy">
+                <span class="brand-label">Maka & Bruno</span>
+                <span class="brand-caption">Desde 26&middot;07&middot;2024</span>
             </div>
-            <div class="hamburger" onclick="toggleMenu(this)">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>        </div>
-        <ul id="nav-links" class="hidden">
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="primaryNav">
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="historia.html">Nuestra Historia</a></li>
-            <li><a href="galeria.html">Galería</a></li>
-            <li><a href="timeline.html">Línea de Tiempo</a></li>
+            <li><a href="historia.html">Nuestra historia</a></li>
+            <li><a class="active" aria-current="page" href="galeria.html">Galería</a></li>
+            <li><a href="timeline.html">Línea de tiempo</a></li>
             <li><a href="carta.html">Carta</a></li>
         </ul>
     </nav>
-
-
-    <h1>Galería de Recuerdos</h1>
-    <p>Algunos de los momentos más lindos que hemos vivido juntos ✨</p>
 </header>
 
-<main class="galeria">
-    <div class="grid">
-        <div class="grid-item">
-        <img src="assets/images/volcano-kiss.jpg" alt="Beso frente al volcán">
-            </div>
-            <div class="grid-item">
-                <img src="assets/images/formal-date.jpg" alt="Cena elegante">
-                </div>
-                <div class="grid-item">
-                <img src="assets/images/thermal-pool.jpg" alt="Termas selfie">
-                    </div>
-                    <div class="grid-item">
-                    <img src="assets/images/rafting.jpg" alt="Rafting en Pucón">
-                        </div>
-                        <div class="grid-item">
-                        <img src="assets/images/drive-lesson.jpg" alt="Conduciendo juntos">
-                            </div>
-                            <div class="grid-item">
-                            <img src="assets/images/fair.jpg" alt="Feria con peluches">
-                                </div>
-                                <div class="grid-item">
-                                <img src="assets/images/stitch.jpg" alt="Stitch con corazón">
-                                    </div>
-                                    <div class="grid-item">
-                                    <img src="assets/images/giraffe.jpg" alt="En el zoológico">
-                                        </div>
-                                        <div class="grid-item">
-                                        <img src="assets/images/wink.jpg" alt="Selfie divertida">
-                                            </div>
-                                            <div class="grid-item">
-                                            <img src="assets/images/heart-eye.jpg" alt="Corazón en el ojo">
-                                                </div>
-                                                <div class="grid-item">
-                                                <img src="assets/images/Nieve.jpg" alt="Nieve">
-                                                    </div>
-                                                    <div class="grid-item">
-                                                    <img src="assets/images/sully.jpg" alt="Sully">
-                                                        </div>
-                                                        <div class="grid-item">
-                                                        <img src="assets/images/helado.jpg" alt="Helado">
-                                                            </div>
-                                                            <div class="grid-item">
-                                                            <img src="assets/images/flores.jpg" alt="Flores">
-                                                                </div>
-                                                                <div class="grid-item">
-                                                                <img src="assets/images/fc.jpg" alt="fc">
-                                                                </div>
-                                                                <div class="grid-item">
-                                                                <img src="assets/images/estacionamiento.jpg" alt="Estacionamiento">
-                                                                    </div>
-                                                                    <div class="grid-item">
-                                                                    <img src="assets/images/choripan.jpg" alt="choripan">
-                                                                        </div>
-                                                                        <div class="grid-item">
-                                                                        <img src="assets/images/18.jpg" alt="18">
-                                                                            </div>
-    </div>
-    <!-- Lightbox -->
-    <div id="lightbox" class="lightbox hidden">
-        <span class="close-btn" onclick="closeLightbox()">×</span>
-        <span class="arrow left" onclick="navigateLightbox(-1)">&#10094;</span>
-        <img id="lightbox-img" class="lightbox-img" src="" alt="Imagen ampliada">
-        <span class="arrow right" onclick="navigateLightbox(1)">&#10095;</span>
+<main>
+    <section class="page-hero container" data-animate>
+        <p class="eyebrow">Colección visual</p>
+        <h1>Fotos que cuentan la historia</h1>
+        <p>
+            Escapadas, fechas especiales y momentos espontáneos guardados aquí. Haz clic en cualquier imagen para
+            verla en grande y navegar entre ellas.
+        </p>
+    </section>
+
+    <div class="gallery-grid container" data-animate>
+        <figure class="grid-item">
+            <img src="assets/images/volcano-kiss.jpg" alt="Beso frente al volcán">
+            <figcaption>Volcán Villarrica</figcaption>
+        </figure>
+        <figure class="grid-item">
+            <img src="assets/images/formal-date.jpg" alt="Cena elegante en pareja">
+            <figcaption>Cena elegante</figcaption>
+        </figure>
+        <figure class="grid-item">
+            <img src="assets/images/thermal-pool.jpg" alt="Selfie en termas">
+            <figcaption>Termas</figcaption>
+        </figure>
+        <figure class="grid-item">
+            <img src="assets/images/rafting.jpg" alt="Rafting en Pucón">
+            <figcaption>Rafting</figcaption>
+        </figure>
+        <figure class="grid-item">
+            <img src="assets/images/drive-lesson.jpg" alt="Clase de manejo">
+            <figcaption>Clases de manejo</figcaption>
+        </figure>
+        <figure class="grid-item">
+            <img src="assets/images/fair.jpg" alt="Feria de juegos">
+            <figcaption>Feria</figcaption>
+        </figure>
+        <figure class="grid-item">
+            <img src="assets/images/stitch.jpg" alt="Stitch con corazón">
+            <figcaption>Detalles</figcaption>
+        </figure>
+        <figure class="grid-item">
+            <img src="assets/images/giraffe.jpg" alt="Visita al zoológico">
+            <figcaption>Zoológico</figcaption>
+        </figure>
+        <figure class="grid-item">
+            <img src="assets/images/wink.jpg" alt="Selfie divertida">
+            <figcaption>Selfie</figcaption>
+        </figure>
+        <figure class="grid-item">
+            <img src="assets/images/heart-eye.jpg" alt="Corazón pintado en el ojo">
+            <figcaption>Corazón</figcaption>
+        </figure>
+        <figure class="grid-item">
+            <img src="assets/images/Nieve.jpg" alt="Día en la nieve">
+            <figcaption>Nieve</figcaption>
+        </figure>
+        <figure class="grid-item">
+            <img src="assets/images/sully.jpg" alt="Foto con Sully">
+            <figcaption>Sully</figcaption>
+        </figure>
+        <figure class="grid-item">
+            <img src="assets/images/helado.jpg" alt="Helados">
+            <figcaption>Helados</figcaption>
+        </figure>
+        <figure class="grid-item">
+            <img src="assets/images/flores.jpg" alt="Ramo de flores">
+            <figcaption>Flores</figcaption>
+        </figure>
+        <figure class="grid-item">
+            <img src="assets/images/fc.jpg" alt="Cumpleaños">
+            <figcaption>Cumpleaños</figcaption>
+        </figure>
+        <figure class="grid-item">
+            <img src="assets/images/estacionamiento.jpg" alt="Foto en estacionamiento">
+            <figcaption>Estacionamiento</figcaption>
+        </figure>
+        <figure class="grid-item">
+            <img src="assets/images/choripan.jpg" alt="Choripán">
+            <figcaption>18 de septiembre</figcaption>
+        </figure>
+        <figure class="grid-item">
+            <img src="assets/images/18.jpg" alt="Fiestas patrias">
+            <figcaption>Fiestas patrias</figcaption>
+        </figure>
     </div>
 
+    <div id="lightbox" class="lightbox hidden" aria-hidden="true">
+        <button class="close-btn" type="button" aria-label="Cerrar galería" onclick="closeLightbox()">&#215;</button>
+        <button class="arrow left" type="button" aria-label="Foto anterior" onclick="navigateLightbox(-1)">&#10094;</button>
+        <img id="lightbox-img" class="lightbox-img" src="" alt="Imagen ampliada">
+        <button class="arrow right" type="button" aria-label="Foto siguiente" onclick="navigateLightbox(1)">&#10095;</button>
+    </div>
 </main>
 
-<footer>
-    <p>Hecho con mucho amor 💝 — Bruno</p>
+<footer class="site-footer">
+    <p>Hecho con amor y código por Bruno.</p>
 </footer>
-<script src="js/main.js"></script>
 
+<script src="js/main.js"></script>
 </body>
 </html>

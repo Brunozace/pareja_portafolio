@@ -3,48 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestra Historia - Maka y Bruno</title>
+    <title>Maka y Bruno | Nuestra Historia</title>
+    <meta name="description" content="Un portafolio interactivo que celebra los recuerdos, fotos y promesas de Maka y Bruno.">
     <link rel="icon" type="image/x-icon" href="heart-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style/estilos.css">
 </head>
 <body>
-<header>
-    <nav>
-        <div class="nav-container">
-            <div class="logo">
-                <img src="assets/images/heart-logo.png" alt="Logo" class="logo-img">
+<header class="site-header">
+    <nav class="site-nav container">
+        <a class="brand" href="index.html">
+            <img src="assets/images/heart-logo.png" alt="Logo Maka y Bruno" class="logo-img">
+            <div class="brand-copy">
+                <span class="brand-label">Maka & Bruno</span>
+                <span class="brand-caption">Desde 26&middot;07&middot;2024</span>
             </div>
-            <div class="hamburger" id="hamburger "onclick="toggleMenu(this)">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        <ul id="nav-links" class="hidden">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="historia.html">Nuestra Historia</a></li>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="primaryNav">
+            <li><a class="active" href="index.html">Inicio</a></li>
+            <li><a href="historia.html">Nuestra historia</a></li>
             <li><a href="galeria.html">Galería</a></li>
-            <li><a href="timeline.html">Línea de Tiempo</a></li>
+            <li><a href="timeline.html">Línea de tiempo</a></li>
             <li><a href="carta.html">Carta</a></li>
         </ul>
     </nav>
-
-
-
-    <h1>Maka y Bruno 💖</h1>
-    <p>Una historia de amor para recordar por siempre</p>
 </header>
 
 <main>
-    <section class="hero">
-        <img src="assets/images/volcano-kiss.jpg" alt="Bruno y Maka besándose frente al volcán">
-        <h2>¡Bienvenidos a nuestro rincón especial!</h2>
-        <p>Un año lleno de aventuras, risas y amor. Aquí compartimos un pedacito de nuestro viaje juntos 💫</p>
+    <section class="hero hero--home container" data-animate>
+        <div class="hero-content">
+            <p class="eyebrow">Un año de aventuras y promesas</p>
+            <h1>Una historia escrita entre risas, viajes y mucho amor.</h1>
+            <p class="lede">
+                Este portafolio captura nuestros momentos favoritos: desde la primera cita en Concepción, hasta
+                las escapadas a Pucón y los planes que aún queremos cumplir.
+            </p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="historia.html">Ver nuestra historia</a>
+                <a class="btn btn-link" href="galeria.html">Explorar la galería</a>
+            </div>
+        </div>
+        <figure class="hero-media">
+            <img src="assets/images/volcano-kiss.jpg" alt="Bruno y Maka frente al volcán Villarrica">
+            <figcaption>Volcán Villarrica &middot; Enero 2025</figcaption>
+        </figure>
+    </section>
+
+    <section class="card-grid container">
+        <article class="info-card" data-animate>
+            <p class="eyebrow">Highlights</p>
+            <h3>Momentos favoritos</h3>
+            <p>
+                Kayak al atardecer, termas con vista a las montañas, manejos eternos con música cursi y
+                desayunos improvisados. Cada recuerdo suma a nuestra colección privada.
+            </p>
+        </article>
+        <article class="info-card" data-animate>
+            <p class="eyebrow">Próximos planes</p>
+            <h3>Roadtrip del sur</h3>
+            <p>
+                Queremos llegar a Futaleufú, repetir las termas y terminar la ruta con un picnic junto al lago.
+                Este sitio será el diario de viaje actualizado.
+            </p>
+        </article>
+        <article class="info-card" data-animate>
+            <p class="eyebrow">Promesa</p>
+            <h3>Construir juntos</h3>
+            <p>
+                Este espacio nació como regalo, pero crecerá con cartas, fotos y notas futuras. Porque amar
+                también es documentar lo cotidiano.
+            </p>
+        </article>
+    </section>
+
+    <section class="quote-block container" data-animate>
+        <p class="quote">
+            "Cuando escribo sobre nosotros entiendo que el amor también puede ser diseño, memoria y visión.
+            Gracias por inspirar esta versión de nosotros."
+        </p>
+        <p class="quote-author">Bruno</p>
+    </section>
+
+    <section class="cta-panel container" data-animate>
+        <div class="cta-copy">
+            <p class="eyebrow">Explora más</p>
+            <h2>Línea de tiempo, carta y galería.</h2>
+            <p>
+                Pasa por la línea de tiempo para revivir cada fecha, abre la carta para leer lo que no siempre digo
+                en voz alta y visita la galería para ver nuestras fotos favoritas.
+            </p>
+        </div>
+        <div class="cta-actions">
+            <a class="btn btn-outline" href="timeline.html">Línea de tiempo</a>
+            <a class="btn btn-primary" href="carta.html">Leer la carta</a>
+        </div>
     </section>
 </main>
 
-<footer>
-    <p>Hecho con mucho amor 💝 — Bruno</p>
+<footer class="site-footer">
+    <p>Hecho con amor y código por Bruno.</p>
 </footer>
 
 <script src="js/main.js"></script>

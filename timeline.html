@@ -1,129 +1,168 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Línea de Tiempo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maka y Bruno | Línea de tiempo</title>
+    <meta name="description" content="Hitos clave de la relación de Maka y Bruno presentados en una línea de tiempo.">
     <link rel="icon" type="image/x-icon" href="heart-icon.png">
-    <link rel="stylesheet" href="style/estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style/estilos.css">
 </head>
 <body>
-<header>
-    <nav>
-        <div class="nav-container">
-            <div class="logo">
-                <img src="assets/images/heart-logo.png" alt="Logo" class="logo-img">
+<header class="site-header">
+    <nav class="site-nav container">
+        <a class="brand" href="index.html">
+            <img src="assets/images/heart-logo.png" alt="Logo Maka y Bruno" class="logo-img">
+            <div class="brand-copy">
+                <span class="brand-label">Maka & Bruno</span>
+                <span class="brand-caption">Desde 26&middot;07&middot;2024</span>
             </div>
-            <div class="hamburger" onclick="toggleMenu(this)">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>        </div>
-        <ul id="nav-links" class="hidden">
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="primaryNav">
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="historia.html">Nuestra Historia</a></li>
+            <li><a href="historia.html">Nuestra historia</a></li>
             <li><a href="galeria.html">Galería</a></li>
-            <li><a href="timeline.html">Línea de Tiempo</a></li>
+            <li><a class="active" aria-current="page" href="timeline.html">Línea de tiempo</a></li>
             <li><a href="carta.html">Carta</a></li>
         </ul>
     </nav>
-
-
-    <h1>Linea del tiempo</h1>
-    <p>Nuestra historia ✨</p>
 </header>
-<div class="timeline-container">
 
-    <div class="event">
-        <div class="event-content">
-            <h3>26 Julio 2024</h3>
-            <p>Nuestra primera cita en el mall 💕</p>
-        </div>
-    </div>
+<main>
+    <section class="page-hero container" data-animate>
+        <p class="eyebrow">Cronómetro emocional</p>
+        <h1>Línea de tiempo</h1>
+        <p>
+            Cada punto en esta línea guarda un recuerdo, una conversación importante o un viaje. No es solo una lista
+            de fechas, es prueba de cómo crecemos juntos.
+        </p>
+    </section>
 
-    <div class="event">
-        <img src="assets/images/driving.jpg" alt="Enseñando a manejar">
-        <div class="event-content">
-            <h3>5 Septiembre 2024</h3>
-            <p>Le enseñé a Maka a manejar 🚗</p>
-        </div>
-    </div>
+    <section class="timeline container" data-animate>
+        <article class="timeline-item">
+            <div class="timeline-media">
+                <img src="assets/images/driving.jpg" alt="Clases de manejo">
+            </div>
+            <div class="timeline-content">
+                <p class="timeline-date">26 julio 2024</p>
+                <h3>Primera cita</h3>
+                <p>Mall, conversaciones largas y la primera vez que entendimos que esto iba en serio.</p>
+            </div>
+        </article>
+        <article class="timeline-item">
+            <div class="timeline-media">
+                <img src="assets/images/drive-lesson.jpg" alt="Enseñando a manejar">
+            </div>
+            <div class="timeline-content">
+                <p class="timeline-date">5 septiembre 2024</p>
+                <h3>Clase de manejo</h3>
+                <p>Entre nervios y carcajadas lograste mover el auto como toda una pro.</p>
+            </div>
+        </article>
+        <article class="timeline-item">
+            <div class="timeline-media">
+                <img src="assets/images/tulipanes.jpg" alt="Jardín de tulipanes">
+            </div>
+            <div class="timeline-content">
+                <p class="timeline-date">26 septiembre 2024</p>
+                <h3>Jardín de tulipanes</h3>
+                <p>Color por todas partes y la foto favorita de ese mes.</p>
+            </div>
+        </article>
+        <article class="timeline-item">
+            <div class="timeline-media">
+                <img src="assets/images/playa.jpg" alt="Playa Pingueral">
+            </div>
+            <div class="timeline-content">
+                <p class="timeline-date">7 octubre 2024</p>
+                <h3>Atardecer en Pingueral</h3>
+                <p>El mar, una manta y planes gigantes para el futuro.</p>
+            </div>
+        </article>
+        <article class="timeline-item">
+            <div class="timeline-media">
+                <img src="assets/images/cumple.jpg" alt="Cumpleaños de Maka">
+            </div>
+            <div class="timeline-content">
+                <p class="timeline-date">15 octubre 2024</p>
+                <h3>Cumpleaños de Maka</h3>
+                <p>Velas, torta personalizada y la fiesta que merecías.</p>
+            </div>
+        </article>
+        <article class="timeline-item">
+            <div class="timeline-media">
+                <img src="assets/images/aguas-del-monte.jpg" alt="Aguas del Monte">
+            </div>
+            <div class="timeline-content">
+                <p class="timeline-date">24 noviembre 2024</p>
+                <h3>Aguas del Monte</h3>
+                <p>Sol, piscina y la foto favorita para enmarcar.</p>
+            </div>
+        </article>
+        <article class="timeline-item">
+            <div class="timeline-media">
+                <img src="assets/images/formal-date.jpg" alt="Cena formal">
+            </div>
+            <div class="timeline-content">
+                <p class="timeline-date">18 diciembre 2024</p>
+                <h3>Cita elegante</h3>
+                <p>Nos vestimos de gala solo para seguir riendo de cosas simples.</p>
+            </div>
+        </article>
+        <article class="timeline-item">
+            <div class="timeline-media">
+                <img src="assets/images/rafting.jpg" alt="Vacaciones en Pucón">
+            </div>
+            <div class="timeline-content">
+                <p class="timeline-date">9 enero 2025</p>
+                <h3>Pucón</h3>
+                <p>Rafting, kayak y termas. La mezcla perfecta de adrenalina y calma.</p>
+            </div>
+        </article>
+        <article class="timeline-item">
+            <div class="timeline-media">
+                <img src="assets/images/giraffe.jpg" alt="Visita al zoológico">
+            </div>
+            <div class="timeline-content">
+                <p class="timeline-date">28 abril 2025</p>
+                <h3>Zoológico</h3>
+                <p>La jirafa más alta del lugar y nuestras caras de asombro.</p>
+            </div>
+        </article>
+        <article class="timeline-item">
+            <div class="timeline-media">
+                <img src="assets/images/aniversario.JPG" alt="Primer aniversario">
+            </div>
+            <div class="timeline-content">
+                <p class="timeline-date">26 julio 2025</p>
+                <h3>Primer aniversario</h3>
+                <p>Un año celebrando y convenciéndonos de que esto recién empieza.</p>
+            </div>
+        </article>
+        <article class="timeline-item">
+            <div class="timeline-media">
+                <img src="assets/images/fc.jpg" alt="Cumpleaños futuro">
+            </div>
+            <div class="timeline-content">
+                <p class="timeline-date">15 octubre 2025</p>
+                <h3>Lo que viene</h3>
+                <p>Agenda abierta para nuevos brindis, sorpresas y destinos.</p>
+            </div>
+        </article>
+    </section>
+</main>
 
-    <div class="event">
-        <img src="assets/images/tulipanes.jpg" alt="Jardín de tulipanes">
-        <div class="event-content">
-            <h3>26 Septiembre 2024</h3>
-            <p>Paseo al jardín de tulipanes 🌷</p>
-        </div>
-    </div>
+<footer class="site-footer">
+    <p>Hecho con amor y código por Bruno.</p>
+</footer>
 
-    <div class="event">
-        <img src="assets/images/playa.jpg" alt="Playa Pingueral">
-        <div class="event-content">
-            <h3>7 Octubre 2024</h3>
-            <p>Atardecer en la playa de Pingueral 🌅</p>
-        </div>
-    </div>
-
-    <div class="event">
-        <img src="assets/images/cumple.jpg" alt="Cumpleaños de Maka">
-        <div class="event-content">
-            <h3>15 Octubre 2024</h3>
-            <p>El cumpleaños de Maka con su torta especial 🎂</p>
-        </div>
-    </div>
-
-    <div class="event">
-        <img src="assets/images/aguas-del-monte.jpg" alt="Aguas del Monte">
-        <div class="event-content">
-            <h3>24 Noviembre 2024</h3>
-            <p>Fuimos a Aguas del Monte, un día de piscina y sol ☀️🩱</p>
-        </div>
-    </div>
-
-    <div class="event">
-        <img src="assets/images/formal-date.jpg" alt="Evento elegante">
-        <div class="event-content">
-            <h3>18 Diciembre 2024</h3>
-            <p>Salimos a una cita elegante en pareja ✨</p>
-        </div>
-    </div>
-
-    <div class="event">
-        <img src="assets/images/rafting.jpg" alt="Vacaciones en Pucón">
-        <div class="event-content">
-            <h3>9 Enero 2025</h3>
-            <p>Vacaciones en Pucón: rafting, kayak, termas 🛶</p>
-        </div>
-    </div>
-
-    <div class="event">
-        <img src="assets/images/giraffe.jpg" alt="Zoológico con jirafas">
-        <div class="event-content">
-            <h3>28 Abril 2025</h3>
-            <p>Día en el zoológico, vimos una jirafa muy alta 🦒</p>
-        </div>
-    </div>
-
-
-    <div class="event">
-        <img src="assets/images/aniversario.JPG" alt="Primer Aniversario">
-        <div class="event-content">
-            <h3>26 Julio 2025</h3>
-            <p>Nuestro primer aniversario juntos 🎉</p>
-        </div>
-    </div>
-
-    <div class="event">
-        <img src="assets/images/fc.jpg" alt="Cumpleaños">
-        <div class="event-content">
-            <h3>15 Octubre 2025</h3>
-            <p>Happy Birthday!! 🎉</p>
-        </div>
-    </div>
-
-</div>
 <script src="js/main.js"></script>
-
 </body>
 </html>

@@ -1,71 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Carta para Maka 💌</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maka y Bruno | Carta</title>
+    <meta name="description" content="Carta abierta de Bruno para Maka, pensada para leerse con calma.">
     <link rel="icon" type="image/x-icon" href="heart-icon.png">
-    <link rel="stylesheet" href="style/estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style/estilos.css">
 </head>
 <body>
-
-<header>
-    <nav>
-        <div class="nav-container">
-            <div class="logo">
-                <img src="assets/images/heart-logo.png" alt="Logo" class="logo-img">
+<header class="site-header">
+    <nav class="site-nav container">
+        <a class="brand" href="index.html">
+            <img src="assets/images/heart-logo.png" alt="Logo Maka y Bruno" class="logo-img">
+            <div class="brand-copy">
+                <span class="brand-label">Maka & Bruno</span>
+                <span class="brand-caption">Desde 26&middot;07&middot;2024</span>
             </div>
-            <div class="hamburger" onclick="toggleMenu(this)">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        <ul id="nav-links" class="hidden">
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="primaryNav">
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="historia.html">Nuestra Historia</a></li>
+            <li><a href="historia.html">Nuestra historia</a></li>
             <li><a href="galeria.html">Galería</a></li>
-            <li><a href="timeline.html">Línea de Tiempo</a></li>
-            <li><a href="carta.html">Carta</a></li>
+            <li><a href="timeline.html">Línea de tiempo</a></li>
+            <li><a class="active" aria-current="page" href="carta.html">Carta</a></li>
         </ul>
     </nav>
-
-
-    <h1>Carta para Maka</h1>
-    <p>Un pequeño pedazo de mi corazón escrito para ti 💖</p>
 </header>
 
-<main class="carta-amor">
-    <h2>Mi gorda 💌</h2>
+<main>
+    <section class="page-hero container" data-animate>
+        <p class="eyebrow">Carta abierta</p>
+        <h1>Para ti, Maka</h1>
+        <p>Un sobre interactivo para leer cuando necesites un recordatorio de todo lo que siento.</p>
+    </section>
 
-    <div class="envelope-container">
-        <img
-                src="assets/images/envelope-closed.png"
-                alt="Sobre cerrado"
-                class="envelope"
-                id="envelopeImage"
-        />
-
-        <div class="carta-contenido hidden" id="cartaTexto">
-            <p>
-                Mi querida Gorda,<br><br>
-                Desde el primer momento en que nuestras miradas se cruzaron, supe que mi vida estaba a punto de cambiar.
-                Cada momento contigo ha sido una bendición: desde nuestras paseos, películas, risas, silencios, hasta nuestros abrazos que hablan más que las palabras.<br><br>
-                Eres mi vida, mi emoción, mi lugar favorito del mundo. Me has enseñado a amar de una forma nueva, más pura y real.
-                Gracias por ser tú, por estar a mi lado, por entregarme tu cariño, tu confianza y tu tiempo.<br><br>
-                Este proyecto es un regalo para nosotros, para inmortalizar lo que sentimos y todo lo que hemos vivido.
-                Ojalá el tiempo siempre nos alcance para amarnos como hasta ahora… o incluso más.<br><br>
-                Con todo mi corazón,<br>
-                Bruno 💖
-            </p>
+    <section class="letter container" data-animate>
+        <div class="letter-envelopes">
+            <img src="assets/images/envelope-closed.png" alt="Sobre cerrado" class="envelope" id="envelopeImage">
+            <p>Desliza el cursor sobre el sobre para abrir la carta.</p>
         </div>
-    </div>
+        <article class="carta-contenido hidden" id="cartaTexto">
+            <p>
+                Mi querida Maka,<br><br>
+                Desde el primer momento en que nuestras miradas se cruzaron supe que mi vida cambiaría. Cada
+                paseo, película, risa y silencio contigo me confirma lo afortunado que soy.<br><br>
+                Eres mi hogar y mi impulso. Gracias por confiar en mí, por compartir tus sueños y por enseñarme
+                a amar mejor.<br><br>
+                Este proyecto es nuestro diario vivo. Queremos que el tiempo alcance para todo lo que aún no
+                hacemos, pero mientras tanto, guardo aquí lo que siempre quiero recordarte: te amo hoy y en todas
+                las versiones que vienen.<br><br>
+                Bruno.
+            </p>
+        </article>
+    </section>
 </main>
 
-
-
-<footer>
-    <p>Hecho con mucho amor 💝 — Bruno</p>
+<footer class="site-footer">
+    <p>Hecho con amor y código por Bruno.</p>
 </footer>
 
 <script src="js/main.js"></script>
